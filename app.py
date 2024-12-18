@@ -33,7 +33,7 @@ HTML_TEMPLATE = """
 </html>
 """
 
-SERVER_IP = "http://172.30.1.177:8501"  # Arduino 서버 IP
+SERVER_IP = "http://172.30.1.177:5000"  # Arduino 서버 IP
 
 def set_led_brightness(server_ip, brightness):
     try:
