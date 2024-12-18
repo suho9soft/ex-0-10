@@ -33,7 +33,7 @@ HTML_TEMPLATE = """
 </html>
 """
 
-SERVER_IP = "http://172.30.1.177:5000"  # Arduino 서버 IP
+SERVER_IP = "http://172.30.1.177:8501"  # Arduino 서버 IP
 
 def set_led_brightness(server_ip, brightness):
     try:
@@ -61,4 +61,4 @@ def control_led():
     return render_template_string(HTML_TEMPLATE, message=message)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5000, use_reloader=False)
