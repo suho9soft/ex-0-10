@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import requests
 import subprocess
 import webbrowser
 
@@ -41,12 +40,12 @@ def main():
     if st.button('조회수 추가'):
         update_views(new_value)
 
-    # HTML 주소 입력 받기
-    html_url = st.text_input('HTML 서버 주소를 입력하세요:', 'http://172.30.1.177:8501/')
+    # 서버 주소 입력 받기
+    server_url = st.text_input('서버 주소를 입력하세요:', 'http://172.30.1.177:8501/')
 
-    # HTML 서버로 이동하기
-    if st.button('HTML 서버로 이동하기'):
-        webbrowser.open_new_tab(html_url)
+    # 서버로 이동하기
+    if st.button('서버로 이동하기'):
+        webbrowser.open_new_tab(server_url)
 
     # 업데이트된 데이터를 판다스 시리즈로 변환하여 표시
     sview = pd.Series(view)
