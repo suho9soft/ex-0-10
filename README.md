@@ -1,4 +1,10 @@
 # ex-0-10
+Discuss
+
+https://discuss.streamlit.io/
+
+Explore
+
 내가 만들고 싶은 것을 아두이노 프로그램 넣고 짜고요
 
 토니 에서 프로그램를 짜고요
