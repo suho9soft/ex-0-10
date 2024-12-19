@@ -11,3 +11,5 @@ Thonny 쪽에 시스템 쉘 열기 에서 실행 프로그램 : streamlit run ap
 
 https://ex-0-10-dbhttinuxvcgouwrycadlj.streamlit.app/
 
+또 한개 더 있는데요 
+
