@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import subprocess
-import webbrowser
 
 # Flask 서버 시작
 def start_flask_server():
@@ -41,11 +40,10 @@ def main():
         update_views(new_value)
 
     # 서버 주소 입력 받기
-    server_url = st.text_input('서버 주소를 입력하세요:', 'http://172.30.1.177:8501/')
+    server_url = st.text_input('서버 주소를 입력하세요:', 'https://USERNAME.github.io/REPOSITORY_NAME/')
 
-    # 서버로 이동하기
-    if st.button('서버로 이동하기'):
-        webbrowser.open_new_tab(server_url)
+    # 서버로 이동할 링크 생성
+    st.markdown(f'[서버로 이동하기]({server_url})')
 
     # 업데이트된 데이터를 판다스 시리즈로 변환하여 표시
     sview = pd.Series(view)
