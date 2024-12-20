@@ -26,4 +26,6 @@ https://ex-0-10-kznsc5mtx9dpajsgtuintl.streamlit.app/
 어디에 있든 조작 할수 있습니다
 
 
-[여기](http://172.30.1.177:8501/)
+[여기](http://172.30.1.177:8501/) 
+
+박수 짝 짝 짝 !
