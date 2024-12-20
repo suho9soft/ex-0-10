@@ -25,3 +25,26 @@ https://ex-0-10-iegicqeecjwyztrfdewwdd.streamlit.app/
 
 어디에 있든 조작 할수 있습니다
 
+
+### 링크 생성 방법
+
+- `[텍스트](URL)` 형식을 사용하여 링크를 생성합니다.
+- 예를 들어, `[여기](http://172.30.1.177:8501/)`를 입력하면 "여기"라는 텍스트를 클릭하면 해당 URL로 이동합니다.
+
+### 전체 예시
+
+```markdown
+# 프로젝트 제목
+
+이 프로젝트는 **DarwinFPV BabyApe Pro V2** 드론에 대한 설명을 포함합니다. 더 자세한 정보는 [여기](http://172.30.1.177:8501/)에서 확인하세요.
+
+## 개요
+
+프로젝트 개요와 목적을 간단히 설명합니다.
+
+## 설치
+
+1. 저장소를 클론합니다:
+   ```sh
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
