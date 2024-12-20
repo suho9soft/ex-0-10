@@ -19,7 +19,7 @@ https://ex-0-10-dbhttinuxvcgouwrycadlj.streamlit.app/
 
 또 한개 더 있는데요 
 
-https://ex-0-10-iegicqeecjwyztrfdewwdd.streamlit.app/
+https://ex-0-10-kznsc5mtx9dpajsgtuintl.streamlit.app/
 
 저게 LED PWM 프로그램 입니다 주소를 끌릭 그럼 여러분들은 제가 한 프로젝트를 
 
