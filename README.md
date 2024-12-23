@@ -34,7 +34,7 @@ show databases;
 
 2.내가 python17이라는 이름의 데이터베이스를 사용하겠다!
 
-use python17
+use python1
 
 3.python17이라는 DB안에있는 table목록을 조회하겠다!
 
