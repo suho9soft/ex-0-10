@@ -29,11 +29,18 @@ https://ex-0-10-kznsc5mtx9dpajsgtuintl.streamlit.app/
 [여기](http://172.30.1.177:8501/) 
 
 1.나의 mysql에 존재하는 모든 database목록을 출력해라!
+
 show databases;
+
 2.내가 python17이라는 이름의 데이터베이스를 사용하겠다!
+
 use python17
+
 3.python17이라는 DB안에있는 table목록을 조회하겠다!
+
 show tables;
+
 4.user라는 table이 있는데 이 table의 필드 구조를 출력해라
+
 desc user;
 
