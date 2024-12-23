@@ -1,55 +1,92 @@
+import tkinter as tk
+from tkinter import ttk
+import mysql.connector
+from mysql.connector import Error
 import streamlit as st
-import pandas as pd
-import subprocess
 
-# Flask 서버 시작
-def start_flask_server():
-    subprocess.Popen(['python', 'flask_server.py'])
-
-start_flask_server()
-
-# 조회수 데이터를 저장할 리스트
-view = [100, 150, 30]
-
-# 조회수 데이터를 업데이트하는 함수
-def update_views(new_value):
+# MySQL 데이터베이스에 데이터 삽입 함수
+def insert_data(num, name, age, gender):
+    connection = None
     try:
-        new_value = int(new_value)
-        view.append(new_value)
-        st.success(f"{new_value} 조회수가 추가되었습니다!")
+        connection = mysql.connector.connect(
+            host='localhost',
+            user='user3',
+            passwd='123f5678',
+            database='python3'
+        )
+        if connection.is_connected():
+            cursor = connection.cursor()
+            query = "INSERT INTO user (num, name, age, gender) VALUES (%s, %s, %s, %s)"
+            cursor.execute(query, (num, name, age, gender))
+            connection.commit()
+            print("데이터가 성공적으로 삽입되었습니다.")
+    except Error as e:
+        print(f"Error: '{e}'")
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+# 입력값을 데이터베이스에 삽입하는 함수
+def print_input():
+    num = num_entry.get()
+    name = name_entry.get()
+    age = age_entry.get()
+    gender = gender_var.get()
+
+    # num과 age 입력값을 정수로 변환
+    try:
+        num = int(num)
+        age = int(age)
+        insert_data(num, name, age, gender)
+        print(f"번호: {num}, 이름: {name}, 나이: {age}, 성별: {gender}")
     except ValueError:
-        st.error("숫자를 입력해 주세요.")
+        print("번호와 나이는 숫자로 입력해 주세요.")
 
-# 메인 앱 함수
+# Tkinter 윈도우 설정
+root = tk.Tk()
+root.title("입력 폼")
+root.geometry("300x250")
+
+# 번호 입력 필드
+tk.Label(root, text="번호:").grid(row=0, column=0, padx=10, pady=5)
+num_entry = tk.Entry(root)
+num_entry.grid(row=0, column=1, padx=10, pady=5)
+
+# 이름 입력 필드
+tk.Label(root, text="이름:").grid(row=1, column=0, padx=10, pady=5)
+name_entry = tk.Entry(root)
+name_entry.grid(row=1, column=1, padx=10, pady=5)
+
+# 나이 입력 필드
+tk.Label(root, text="나이:").grid(row=2, column=0, padx=10, pady=5)
+age_entry = tk.Entry(root)
+age_entry.grid(row=2, column=1, padx=10, pady=5)
+
+# 성별 선택 라디오 버튼
+tk.Label(root, text="성별:").grid(row=3, column=0, padx=10, pady=5)
+gender_var = tk.StringVar(value="남성")
+tk.Radiobutton(root, text="남성", variable=gender_var, value="남성").grid(row=3, column=1, padx=10, pady=5)
+tk.Radiobutton(root, text="여성", variable=gender_var, value="여성").grid(row=3, column=2, padx=10, pady=5)
+
+# 입력 버튼
+submit_button = tk.Button(root, text="입력", command=print_input)
+submit_button.grid(row=4, columnspan=3, pady=10)
+
+# Streamlit 앱 함수
 def main():
-    st.write('# YouTube 조회수')
-
-    # 기존 조회수 데이터 표시
-    st.write('## 원본 데이터')
-    st.write(view)
-
-    # 바 차트 표시
-    st.write('## 바 차트')
-    st.bar_chart(view)
-
-    # 사용자가 입력할 수 있는 텍스트 박스
-    new_value = st.text_input('새로운 조회수를 입력하세요:', '')
-
-    # 입력된 값이 있을 때 업데이트 함수 호출
-    if st.button('조회수 추가'):
-        update_views(new_value)
-
+    st.title("서버 주소 입력 폼")
+    
     # 서버 주소 입력 받기
-    server_url = st.text_input('서버 주소를 입력하세요:', 'http://172.30.1.177:8501/')
+    server_url = st.text_input('서버 주소를 입력하세요:', 'http://172.30.1.177:8501')
 
-    # 서버로 이동할 링크 생성
-    st.markdown(f'[서버로 이동하기]({server_url})')
+    # 서버로 이동할 링크 생성 버튼
+    if st.button('서버로 이동하기'):
+        st.markdown(f'[서버로 이동하기]({server_url})', unsafe_allow_html=True)
 
-    # 업데이트된 데이터를 판다스 시리즈로 변환하여 표시
-    sview = pd.Series(view)
-    st.write('## 판다스 시리즈')
-    st.write(sview)
-
-# 앱 실행
+# Streamlit 앱 실행
 if __name__ == '__main__':
     main()
+
+# Tkinter 윈도우 실행
+root.mainloop()
