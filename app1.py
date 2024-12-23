@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 import mysql.connector
 from mysql.connector import Error
-import streamlit as st
 
 # MySQL 데이터베이스에 데이터 삽입 함수
 def insert_data(num, name, age, gender):
@@ -72,21 +71,6 @@ tk.Radiobutton(root, text="여성", variable=gender_var, value="여성").grid(ro
 # 입력 버튼
 submit_button = tk.Button(root, text="입력", command=print_input)
 submit_button.grid(row=4, columnspan=3, pady=10)
-
-# Streamlit 앱 함수
-def main():
-    st.title("서버 주소 입력 폼")
-    
-    # 서버 주소 입력 받기
-    server_url = st.text_input('서버 주소를 입력하세요:', 'http://172.30.1.177:8501')
-
-    # 서버로 이동할 링크 생성 버튼
-    if st.button('서버로 이동하기'):
-        st.markdown(f'[서버로 이동하기]({server_url})', unsafe_allow_html=True)
-
-# Streamlit 앱 실행
-if __name__ == '__main__':
-    main()
 
 # Tkinter 윈도우 실행
 root.mainloop()
