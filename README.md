@@ -76,4 +76,35 @@ select * from user where name like ‘%길%’;
 
 select * from user where age >= 20 and age <= 50;
 
+1.user라는 table의 모든 데이터의 name부분을 녹칸다로 바꾸겠다!(위험)
+
+update user set name=’녹칸다’;
+
+2.primary-key가 1인 레코드의 이름을 ‘녹칸다’에서 ‘노가다’로 바꾸겠다!
+
+update user set name=’노가다’ where num=1;
+
+3.key가 4인 레코드의 나이를 120으로 수정하겠다!
+
+update user set age=120 where num=4;
+
+4.key가 1인 레코드의 이름을 ‘녹칸다’로 수정하고 나이를 30으로 수정한다!
+
+update user set name='녹칸다',age=30 where num=1;
+
+1.user table에 있는 모든 데이터를 삭제하겠다!
+
+delete from user;
+
+2.key가 4인 레코드를 삭제하겠다!
+
+delete from user where num=4;
+
+3.key가 4~6범위인 레코드를 삭제하겠다!
+
+delete from user where num>=4 and num<=6;
+
+
+
+
 
