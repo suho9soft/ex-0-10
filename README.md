@@ -44,3 +44,36 @@ show tables;
 
 desc user;
 
+1.user라는 테이블의 모든 레코드를 읽겠다!
+
+select * from user;
+
+2.user라는 테이블의 primary-key와 name만 읽겠다!
+
+select num,name from user;
+
+3.user라는 테이블의 name와 gender만 읽겠다!
+
+select name,gender from user;
+
+4.user라는 테이블의 primary-key가 1번인것을 조회하겠다!
+
+select * from user where num=1;
+
+5.user라는 테이블의 name이 녹칸다인것을 조회하겠다!
+
+select * from user where name=’녹칸다’;
+
+6.user라는 테이블의 이름이 홍으로 시작하는 사람을 조회하겠다!
+
+select * from user where name like ‘홍%’;
+
+7.홍길동, 홍길순이 있을때 가운데 글자가 길이 포함된 사람을 출력하겠다!
+
+select * from user where name like ‘%길%’;
+
+8.나이가 20~50사이인 것만 출력하겠다!
+
+select * from user where age >= 20 and age <= 50;
+
+
