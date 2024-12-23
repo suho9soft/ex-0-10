@@ -48,6 +48,11 @@ desc user;
 
 select * from user;
 
+새롭게 하나 더 입력 한다 그러면 2 개가 된니다
+
+INSERT INTO user (name, age, gender) VALUES ('녹칸다', 20, '남성');
+
+
 2.user라는 테이블의 primary-key와 name만 읽겠다!
 
 select num,name from user;
