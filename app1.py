@@ -11,7 +11,7 @@ def insert_data(num, name, age, gender):
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            user='user',
+            user='root',
             passwd='123f5678',
             database='python4'
         )
