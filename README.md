@@ -50,7 +50,7 @@ select * from user;
 
 새롭게 하나 더 입력 한다 그러면 2 개가 된니다
 
-INSERT INTO user (name, age, gender) VALUES ('녹칸다', 20, '남성');
+INSERT INTO user (name, age, gender) VALUES ('제네식스', 20, '남성');
 
 
 2.user라는 테이블의 primary-key와 name만 읽겠다!
@@ -65,9 +65,9 @@ select name,gender from user;
 
 select * from user where num=1;
 
-5.user라는 테이블의 name이 녹칸다인것을 조회하겠다!
+5.user라는 테이블의 name이 제네식스인것을 조회하겠다!
 
-select * from user where name=’녹칸다’;
+select * from user where name=’제네식스’;
 
 6.user라는 테이블의 이름이 홍으로 시작하는 사람을 조회하겠다!
 
@@ -77,25 +77,7 @@ select * from user where name like ‘홍%’;
 
 select * from user where name like ‘%길%’;
 
-8.나이가 20~50사이인 것만 출력하겠다!
-
-select * from user where age >= 20 and age <= 50;
-
-1.user라는 table의 모든 데이터의 name부분을 녹칸다로 바꾸겠다!(위험)
-
-update user set name=’녹칸다’;
-
-2.primary-key가 1인 레코드의 이름을 ‘녹칸다’에서 ‘노가다’로 바꾸겠다!
-
-update user set name=’노가다’ where num=1;
-
-3.key가 4인 레코드의 나이를 120으로 수정하겠다!
-
-update user set age=120 where num=4;
-
-4.key가 1인 레코드의 이름을 ‘녹칸다’로 수정하고 나이를 30으로 수정한다!
-
-update user set name='녹칸다',age=30 where num=1;
+8.나이가 20~50사이인 것만 출력하스',age=30 where num=1;
 
 1.user table에 있는 모든 데이터를 삭제하겠다!
 
