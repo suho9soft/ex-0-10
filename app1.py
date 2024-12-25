@@ -11,18 +11,26 @@ def insert_data(num, name, age, gender):
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',
+            user='user',
             passwd='123f5678',
             database='python4'
         )
         if connection.is_connected():
             cursor = connection.cursor()
+            
+            # 중복된 num 값 확인
+            cursor.execute("SELECT COUNT(*) FROM user WHERE num = %s", (num,))
+            result = cursor.fetchone()
+            if result[0] > 0:
+                st.error(f"번호 {num} 는 이미 존재합니다. 다른 번호를 입력해 주세요.")
+                return
+
             query = "INSERT INTO user (num, name, age, gender) VALUES (%s, %s, %s, %s)"
             cursor.execute(query, (num, name, age, gender))
             connection.commit()
-            print("데이터가 성공적으로 삽입되었습니다.")
+            st.success("데이터가 성공적으로 삽입되었습니다.")
     except Error as e:
-        print(f"Error: '{e}'")
+        st.error(f"Error: '{e}'")
     finally:
         if connection and connection.is_connected():
             cursor.close()
@@ -42,7 +50,7 @@ def print_input():
         insert_data(num, name, age, gender)
         print(f"번호: {num}, 이름: {name}, 나이: {age}, 성별: {gender}")
     except ValueError:
-        print("번호와 나이는 숫자로 입력해 주세요.")
+        st.error("번호와 나이는 숫자로 입력해 주세요.")
 
 # Tkinter 윈도우 설정 함수
 def tkinter_app():
@@ -96,3 +104,4 @@ streamlit_thread.start()
 
 # Tkinter 애플리케이션 실행
 tkinter_app()
+
