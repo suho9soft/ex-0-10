@@ -50,7 +50,7 @@ select * from user;
 
 새롭게 하나 더 입력 한다 그러면 2 개가 된니다
 
-INSERT INTO user (name, age, gender) VALUES ('제네식스', 35, '여성');
+INSERT INTO user (name, age, gender) VALUES ('그랜져', 35, '여성');
 
 
 2.user라는 테이블의 primary-key와 name만 읽겠다!
