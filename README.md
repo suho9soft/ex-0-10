@@ -65,9 +65,9 @@ select name,gender from user;
 
 select * from user where num=1;
 
-5.user라는 테이블의 name이 제네식스인것을 조회하겠다!
+5.user라는 테이블의 name이 그랜져 인것을 조회하겠다!
 
-select * from user where name=’제네식스’;
+select * from user where name=’그랜져’;
 
 6.user라는 테이블의 이름이 홍으로 시작하는 사람을 조회하겠다!
 
