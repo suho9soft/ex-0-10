@@ -104,4 +104,3 @@ streamlit_thread.start()
 
 # Tkinter 애플리케이션 실행
 tkinter_app()
-
