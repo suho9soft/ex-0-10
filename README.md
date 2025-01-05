@@ -11,7 +11,7 @@ Explore
 
 필요한 패키지 설치 시스템 쉘 열기 때려 넣고요
 
-Thonny 쪽에 시스템 쉘 열기 에서 실행 프로그램 : streamlit run app1.py
+Thonny 쪽에 시스템 쉘 열기 에서 실행 프로그램 : streamlit run app.py
 
 요게 파이썬 에서 만들어진 HTML 폴더 입니다 주소조 그래서 html 실행이 되는 것니다
 
