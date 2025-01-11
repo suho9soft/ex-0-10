@@ -90,6 +90,8 @@ delete from user where num=4;
 
 delete from user where num>=4 and num<=6;
 
+C:/Users/chat/Videos
+
 
 
 
